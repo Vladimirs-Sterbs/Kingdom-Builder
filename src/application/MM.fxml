@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="pane" style="-fx-pref-width: 1600; -fx-pref-height: 900;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainMenuController">
+   <children>
+      <ImageView fx:id="sPane" fitHeight="900.0" fitWidth="1618.0" opacity="0.5" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@assets/Main%20Menu%20Background.png" />
+         </image>
+      </ImageView>
+      <Text layoutX="471.0" layoutY="676.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Number of Players" textAlignment="CENTER" wrappingWidth="723.6666870117188">
+         <font>
+            <Font size="50.0" />
+         </font>
+      </Text>
+      <Slider id="Players" fx:id="playerSlider" blockIncrement="1.0" layoutX="660.0" layoutY="720.0" majorTickUnit="6.0" max="4.0" min="2.0" minorTickCount="0" prefHeight="24.0" prefWidth="323.0" showTickMarks="true" snapToTicks="true" style="-fx-show-tick-marks: True; -fx-major-tick-unit: 1;" value="4.0" />
+      <Text layoutX="326.0" layoutY="789.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2             3             4" textAlignment="CENTER" wrappingWidth="999.0">
+         <font>
+            <Font name="System Bold" size="36.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="500.0" fitWidth="1062.0" layoutX="295.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@assets/logo@2x.png" />
+         </image>
+      </ImageView>
+      <Text layoutX="700.0" layoutY="596.0" onMouseClicked="#goToInstructions" strokeType="OUTSIDE" strokeWidth="0.0" text="Rules" wrappingWidth="242.9166717529297">
+         <font>
+            <Font size="100.0" />
+         </font>
+      </Text>
+      <Text layoutX="709.0" layoutY="471.0" onMouseClicked="#startGame" strokeType="OUTSIDE" strokeWidth="0.0" text="Start" wrappingWidth="208.78521728515625">
+         <font>
+            <Font size="100.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>

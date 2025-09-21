@@ -1,0 +1,691 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Polygon?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<TabPane fx:id="pane" prefHeight="200.0" prefWidth="200.0" style="-fx-pref-height: 900; -fx-pref-width: 1600;" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Gamestate">
+   <tabs>
+      <Tab text="Game">
+         <content>
+            <AnchorPane fx:id="gamePane" minHeight="0.0" minWidth="0.0" onMouseClicked="#tileClicked" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <ImageView fitHeight="1053.0" fitWidth="1914.0" layoutX="-12.0" layoutY="-122.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@assets/background.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="177.0" fitWidth="156.0" layoutX="1424.0" layoutY="705.0" onMouseClicked="#endTurn" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@assets/next%20button.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="TL" fitHeight="432.0" fitWidth="505.0" layoutX="338.0" layoutY="11.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@assets/boards/board1@2x.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="Explanation1" fitHeight="169.0" fitWidth="181.0" layoutX="1342.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@assets/explantion%20tokens/exp1.png" />
+                     </image></ImageView>
+                  <ImageView fx:id="Explanation2" fitHeight="167.0" fitWidth="178.0" layoutX="1337.0" layoutY="198.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@assets/explantion%20tokens/exp1.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="Explanation3" fitHeight="169.0" fitWidth="174.0" layoutX="1337.0" layoutY="364.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@assets/explantion%20tokens/exp1.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="Explanation4" fitHeight="172.0" fitWidth="182.0" layoutX="1332.0" layoutY="533.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@assets/explantion%20tokens/exp1.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="BL" fitHeight="432.0" fitWidth="505.0" layoutX="338.0" layoutY="430.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@assets/boards/board1@2x.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="BR" fitHeight="432.0" fitWidth="505.0" layoutX="818.0" layoutY="430.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@assets/boards/board1@2x.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="TR" fitHeight="432.0" fitWidth="505.0" layoutX="818.0" layoutY="11.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@assets/boards/board1@2x.png" />
+                     </image>
+                  </ImageView>
+                  <Text layoutX="21.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CARD MODIFERS:">
+                     <font>
+                        <Font name="Gill Sans MT" size="37.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="14.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="(FOR MORE INFO CHECK KINGDOM BUILDER CARDS TAB)">
+                     <font>
+                        <Font name="Gill Sans MT Bold" size="11.0" />
+                     </font>
+                  </Text>
+                  <ImageView fx:id="KBC1" fitHeight="38.0" fitWidth="161.0" layoutX="14.0" layoutY="74.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@assets/special%20card%20names/1.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="KBC3" fitHeight="38.0" fitWidth="161.0" layoutX="14.0" layoutY="173.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@assets/special%20card%20names/1.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="KBC2" fitHeight="38.0" fitWidth="161.0" layoutX="14.0" layoutY="122.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@assets/special%20card%20names/1.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="cardBack" fitHeight="162.0" fitWidth="107.0" layoutX="194.0" layoutY="248.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@assets/Card%20Backs/green_card_back.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="TerrainCard" fitHeight="162.0" fitWidth="107.0" layoutX="30.0" layoutY="247.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@assets/Card%20Backs/green_card_back.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="EA1" fitHeight="106.0" fitWidth="68.0" layoutX="30.0" layoutY="479.0" onMouseClicked="#extra1" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@assets/tokens/A.png" />
+                     </image></ImageView>
+                  <ImageView fx:id="EA2" fitHeight="106.0" fitWidth="68.0" layoutX="91.0" layoutY="482.0" onMouseClicked="#extra2" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@assets/tokens/B.png" />
+                     </image></ImageView>
+                  <ImageView fx:id="EA3" fitHeight="106.0" fitWidth="68.0" layoutX="157.0" layoutY="481.0" onMouseClicked="#extra3" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@assets/tokens/C.png" />
+                     </image></ImageView>
+                  <ImageView fx:id="EA4" fitHeight="106.0" fitWidth="68.0" layoutX="28.0" layoutY="549.0" onMouseClicked="#extra4" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@assets/tokens/D.png" />
+                     </image></ImageView>
+                  <ImageView fx:id="EA5" fitHeight="106.0" fitWidth="68.0" layoutX="93.0" layoutY="551.0" onMouseClicked="#extra5" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@assets/tokens/E.png" />
+                     </image></ImageView>
+                  <ImageView fx:id="EA6" fitHeight="106.0" fitWidth="68.0" layoutX="154.0" layoutY="551.0" onMouseClicked="#extra6" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@assets/tokens/F.png" />
+                     </image></ImageView>
+                  <ImageView fx:id="EA7" fitHeight="106.0" fitWidth="68.0" layoutX="227.0" layoutY="482.0" onMouseClicked="#extra7" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@assets/tokens/G.png" />
+                     </image></ImageView>
+                  <ImageView fx:id="EA8" fitHeight="106.0" fitWidth="68.0" layoutX="227.0" layoutY="551.0" onMouseClicked="#extra8" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@assets/tokens/H.png" />
+                     </image></ImageView>
+                  <Text layoutX="216.0" layoutY="241.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Deck">
+                     <font>
+                        <Font name="Gill Sans MT Bold" size="24.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="5.0" layoutY="243.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Current Card">
+                     <font>
+                        <Font name="Gill Sans MT Bold" size="24.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="playerstate" layoutX="38.0" layoutY="439.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Current Player: 1">
+                     <font>
+                        <Font name="Gill Sans MT Bold" size="24.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="38.0" layoutY="471.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Extra Actions:">
+                     <font>
+                        <Font name="Gill Sans MT Bold" size="24.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="Info" layoutX="39.0" layoutY="671.0" stroke="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Instructions for what to do will appear here" wrappingWidth="253.2421875">
+                     <font>
+                        <Font name="Gill Sans MT" size="24.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="43.0" layoutY="734.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Settlements Left:">
+                     <font>
+                        <Font name="Gill Sans MT Bold" size="24.0" />
+                     </font>
+                  </Text>
+                   <Text fx:id="settextmain" layoutX="56.0" layoutY="800.0" strokeType="OUTSIDE" strokeWidth="0.0" text="40 x">
+                     <font>
+                        <Font name="Gill Sans MT Bold" size="43.0" />
+                     </font>
+                  </Text>
+                  <ImageView fx:id="setmain" fitHeight="106.0" fitWidth="68.0" layoutX="159.0" layoutY="751.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@assets/settlements/hauscount0.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="firstplayertok1" fitHeight="141.0" fitWidth="114.0" layoutX="191.0" layoutY="76.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@assets/starting%20player%20token.png" />
+                     </image>
+                  </ImageView>
+                  <Text fx:id="toScores" layoutX="235.0" layoutY="775.0" onMouseClicked="#toScores" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.0" text="Back to Scores" textAlignment="CENTER" wrappingWidth="105.74993896484375">
+                     <font>
+                        <Font name="Gill Sans MT Bold" size="32.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="38.0" layoutY="643.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Instructions:">
+                     <font>
+                        <Font name="Gill Sans MT Bold" size="24.0" />
+                     </font>
+                  </Text>
+               </children>
+            </AnchorPane>
+         </content>
+      </Tab>
+      <Tab text="Other Player Info">
+         <content>
+            <AnchorPane fx:id="PinfoextraPane" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <ImageView fitHeight="1053.0" fitWidth="1914.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@assets/background.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="EA11" fitHeight="106.0" fitWidth="68.0" layoutX="142.0" layoutY="137.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@assets/tokens/A.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="EA21" fitHeight="106.0" fitWidth="68.0" layoutX="225.0" layoutY="282.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@assets/tokens/B.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="EA31" fitHeight="106.0" fitWidth="68.0" layoutX="303.0" layoutY="208.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@assets/tokens/C.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="EA41" fitHeight="106.0" fitWidth="68.0" layoutX="225.0" layoutY="198.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@assets/tokens/D.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="EA51" fitHeight="106.0" fitWidth="68.0" layoutX="304.0" layoutY="138.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@assets/tokens/E.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="EA61" fitHeight="106.0" fitWidth="68.0" layoutX="142.0" layoutY="198.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@assets/tokens/F.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="EA71" fitHeight="106.0" fitWidth="68.0" layoutX="142.0" layoutY="281.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@assets/tokens/G.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="EA81" fitHeight="106.0" fitWidth="68.0" layoutX="224.0" layoutY="138.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@assets/tokens/H.png" />
+                     </image>
+                  </ImageView>
+                  <Text fx:id="otherplayer1" layoutX="137.0" layoutY="110.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Player:1">
+                     <font>
+                        <Font name="Gill Sans MT Bold" size="63.0" />
+                     </font>
+                  </Text>
+                  <ImageView fx:id="EA111" fitHeight="106.0" fitWidth="68.0" layoutX="671.0" layoutY="135.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@assets/tokens/A.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="EA211" fitHeight="106.0" fitWidth="68.0" layoutX="754.0" layoutY="280.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@assets/tokens/B.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="EA311" fitHeight="106.0" fitWidth="68.0" layoutX="832.0" layoutY="206.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@assets/tokens/C.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="EA411" fitHeight="106.0" fitWidth="68.0" layoutX="754.0" layoutY="196.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@assets/tokens/D.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="EA511" fitHeight="106.0" fitWidth="68.0" layoutX="833.0" layoutY="136.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@assets/tokens/E.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="EA611" fitHeight="106.0" fitWidth="68.0" layoutX="671.0" layoutY="196.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@assets/tokens/F.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="EA711" fitHeight="106.0" fitWidth="68.0" layoutX="671.0" layoutY="279.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@assets/tokens/G.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="EA811" fitHeight="106.0" fitWidth="68.0" layoutX="753.0" layoutY="136.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@assets/tokens/H.png" />
+                     </image>
+                  </ImageView>
+                  <Text fx:id="otherplayer2" layoutX="665.0" layoutY="111.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Player:1">
+                     <font>
+                        <Font name="Gill Sans MT Bold" size="63.0" />
+                     </font>
+                  </Text>
+                  <ImageView fx:id="EA1111" fitHeight="106.0" fitWidth="68.0" layoutX="1201.0" layoutY="133.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@assets/tokens/A.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="EA2111" fitHeight="106.0" fitWidth="68.0" layoutX="1284.0" layoutY="278.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@assets/tokens/B.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="EA3111" fitHeight="106.0" fitWidth="68.0" layoutX="1362.0" layoutY="204.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@assets/tokens/C.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="EA4111" fitHeight="106.0" fitWidth="68.0" layoutX="1284.0" layoutY="194.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@assets/tokens/D.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="EA5111" fitHeight="106.0" fitWidth="68.0" layoutX="1363.0" layoutY="134.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@assets/tokens/E.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="EA6111" fitHeight="106.0" fitWidth="68.0" layoutX="1201.0" layoutY="194.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@assets/tokens/F.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="EA7111" fitHeight="106.0" fitWidth="68.0" layoutX="1201.0" layoutY="277.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@assets/tokens/G.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="EA8111" fitHeight="106.0" fitWidth="68.0" layoutX="1283.0" layoutY="134.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@assets/tokens/H.png" />
+                     </image>
+                  </ImageView>
+                  <Text fx:id="otherplayer3" layoutX="1196.0" layoutY="106.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Player:1">
+                     <font>
+                        <Font name="Gill Sans MT Bold" size="63.0" />
+                     </font>
+                  </Text>
+                   <ImageView fx:id="set1" fitHeight="106.0" fitWidth="68.0" layoutX="308.0" layoutY="534.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@assets/settlements/hauscount0.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="set2" fitHeight="106.0" fitWidth="68.0" layoutX="866.0" layoutY="534.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@assets/settlements/hauscount0.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="set3" fitHeight="106.0" fitWidth="68.0" layoutX="1396.0" layoutY="534.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@assets/settlements/hauscount0.png" />
+                     </image>
+                  </ImageView>
+                  <Text layoutX="32.0" layoutY="454.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Settlements Left:">
+                     <font>
+                        <Font name="Gill Sans MT Bold" size="55.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="setleft2" layoutX="560.0" layoutY="453.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Settlements Left:">
+                     <font>
+                        <Font name="Gill Sans MT Bold" size="55.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="setleft1" layoutX="1093.0" layoutY="454.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Settlements Left:">
+                     <font>
+                        <Font name="Gill Sans MT Bold" size="55.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="settext1" layoutX="171.0" layoutY="588.0" strokeType="OUTSIDE" strokeWidth="0.0" text="40 x">
+                     <font>
+                        <Font name="Gill Sans MT Bold" size="55.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="settext2" layoutX="730.0" layoutY="587.0" strokeType="OUTSIDE" strokeWidth="0.0" text="40 x">
+                     <font>
+                        <Font name="Gill Sans MT Bold" size="55.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="settext3" layoutX="1269.0" layoutY="587.0" strokeType="OUTSIDE" strokeWidth="0.0" text="40 x">
+                     <font>
+                        <Font name="Gill Sans MT Bold" size="55.0" />
+                     </font>
+                  </Text>
+                  <ImageView fx:id="firstplayertok" fitHeight="157.0" fitWidth="287.0" layoutX="190.0" layoutY="643.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@assets/starting%20player%20token.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+         </content>
+      </Tab>
+      <Tab text="Kingdom Builder Cards">
+         <content>
+            <AnchorPane fx:id="cardsPane" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <ImageView fitHeight="1053.0" fitWidth="1914.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@assets/background.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="KBCB1" fitHeight="694.0" fitWidth="812.0" layoutX="62.0" layoutY="44.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@assets/Special%20Cards/1.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="KBCB3" fitHeight="694.0" fitWidth="812.0" layoutX="1101.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@assets/Special%20Cards/1.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="KBCB2" fitHeight="694.0" fitWidth="812.0" layoutX="561.0" layoutY="51.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@assets/Special%20Cards/1.png" />
+                     </image>
+                  </ImageView>
+               </children></AnchorPane>
+         </content>
+      </Tab>
+      <Tab text="Scoring">
+         <content>
+            <AnchorPane fx:id="scoringPane" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <ImageView fitHeight="1053.0" fitWidth="1914.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@assets/background.png" />
+                     </image>
+                  </ImageView>
+                  <Text fx:id="p1" layoutX="27.0" layoutY="258.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Player:1">
+                     <font>
+                        <Font name="Gill Sans MT Bold" size="63.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="p2" layoutX="27.0" layoutY="386.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Player:2">
+                     <font>
+                        <Font name="Gill Sans MT Bold" size="63.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="p3" layoutX="27.0" layoutY="515.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Player:3">
+                     <font>
+                        <Font name="Gill Sans MT Bold" size="63.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="p4" layoutX="27.0" layoutY="649.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Player:4">
+                     <font>
+                        <Font name="Gill Sans MT Bold" size="63.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="271.0" layoutY="145.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cities">
+                     <font>
+                        <Font name="Gill Sans MT Bold" size="48.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="KBCard2" layoutX="774.0" layoutY="145.0" strokeType="OUTSIDE" strokeWidth="0.0" text="KBC 1" textAlignment="CENTER">
+                     <font>
+                        <Font name="Gill Sans MT Bold" size="48.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="KBCard3" layoutX="1071.0" layoutY="145.0" strokeType="OUTSIDE" strokeWidth="0.0" text="KBC 1">
+                     <font>
+                        <Font name="Gill Sans MT Bold" size="48.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="KBCard1" layoutX="509.0" layoutY="145.0" strokeType="OUTSIDE" strokeWidth="0.0" text="KBC 1" textAlignment="CENTER">
+                     <font>
+                        <Font name="Gill Sans MT Bold" size="48.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="1403.0" layoutY="145.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total">
+                     <font>
+                        <Font name="Gill Sans MT Bold" size="48.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="p11" layoutX="323.0" layoutY="255.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cities">
+                     <font>
+                        <Font name="Gill Sans MT" size="54.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="p13" layoutX="798.0" layoutY="255.0" strokeType="OUTSIDE" strokeWidth="0.0" text="KBC 1">
+                     <font>
+                        <Font name="Gill Sans MT" size="54.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="p14" layoutX="1076.0" layoutY="255.0" strokeType="OUTSIDE" strokeWidth="0.0" text="KBC 1">
+                     <font>
+                        <Font name="Gill Sans MT" size="54.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="p12" layoutX="529.0" layoutY="255.0" strokeType="OUTSIDE" strokeWidth="0.0" text="KBC 1">
+                     <font>
+                        <Font name="Gill Sans MT" size="54.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="p15" layoutX="1403.0" layoutY="255.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total">
+                     <font>
+                        <Font name="Gill Sans MT" size="54.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="p21" layoutX="323.0" layoutY="389.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cities">
+                     <font>
+                        <Font name="Gill Sans MT" size="54.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="p23" layoutX="798.0" layoutY="389.0" strokeType="OUTSIDE" strokeWidth="0.0" text="KBC 1">
+                     <font>
+                        <Font name="Gill Sans MT" size="54.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="p24" layoutX="1076.0" layoutY="389.0" strokeType="OUTSIDE" strokeWidth="0.0" text="KBC 1">
+                     <font>
+                        <Font name="Gill Sans MT" size="54.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="p22" layoutX="529.0" layoutY="389.0" strokeType="OUTSIDE" strokeWidth="0.0" text="KBC 1">
+                     <font>
+                        <Font name="Gill Sans MT" size="54.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="p25" layoutX="1403.0" layoutY="389.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total">
+                     <font>
+                        <Font name="Gill Sans MT" size="54.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="p31" layoutX="323.0" layoutY="514.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cities">
+                     <font>
+                        <Font name="Gill Sans MT" size="54.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="p33" layoutX="798.0" layoutY="514.0" strokeType="OUTSIDE" strokeWidth="0.0" text="KBC 1">
+                     <font>
+                        <Font name="Gill Sans MT" size="54.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="p34" layoutX="1076.0" layoutY="514.0" strokeType="OUTSIDE" strokeWidth="0.0" text="KBC 1">
+                     <font>
+                        <Font name="Gill Sans MT" size="54.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="p32" layoutX="529.0" layoutY="514.0" strokeType="OUTSIDE" strokeWidth="0.0" text="KBC 1">
+                     <font>
+                        <Font name="Gill Sans MT" size="54.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="p35" layoutX="1403.0" layoutY="514.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total">
+                     <font>
+                        <Font name="Gill Sans MT" size="54.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="p41" layoutX="323.0" layoutY="650.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cities">
+                     <font>
+                        <Font name="Gill Sans MT" size="54.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="p43" layoutX="798.0" layoutY="650.0" strokeType="OUTSIDE" strokeWidth="0.0" text="KBC 1">
+                     <font>
+                        <Font name="Gill Sans MT" size="54.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="p44" layoutX="1076.0" layoutY="650.0" strokeType="OUTSIDE" strokeWidth="0.0" text="KBC 1">
+                     <font>
+                        <Font name="Gill Sans MT" size="54.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="p42" layoutX="529.0" layoutY="650.0" strokeType="OUTSIDE" strokeWidth="0.0" text="KBC 1">
+                     <font>
+                        <Font name="Gill Sans MT" size="54.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="p45" layoutX="1403.0" layoutY="650.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total">
+                     <font>
+                        <Font name="Gill Sans MT" size="54.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="toBoard" layoutX="7.0" layoutY="810.0" onMouseClicked="#toBoard" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.0" text="See Final Board" textAlignment="CENTER" wrappingWidth="483.0832824707031">
+                     <font>
+                        <Font name="Gill Sans MT Bold" size="54.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="MM" layoutX="633.0" layoutY="810.0" onMouseClicked="#backToMM" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.0" text="Return to Main Menu" textAlignment="CENTER" wrappingWidth="579.0832824707031">
+                     <font>
+                        <Font name="Gill Sans MT Bold" size="54.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="winners" layoutX="27.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Game In Progress">
+                     <font>
+                        <Font name="Gill Sans MT Bold" size="63.0" />
+                     </font>
+                  </Text>
+               </children>
+            </AnchorPane>
+         </content>
+      </Tab>
+      <Tab text="Rules">
+        <content>
+          <AnchorPane fx:id="rulesPane" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <ImageView fitHeight="1053.0" fitWidth="1914.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@assets/background.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="rules" fitHeight="860.0" fitWidth="665.0" layoutX="818.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@assets/Rules/rules-1.png" />
+                     </image>
+                  </ImageView>
+                  <Polygon fill="#dba237" layoutX="380.0" layoutY="577.0" onMouseClicked="#next" points="-16.555572509765625, 40.0, 50.0, 40.0, 17.22222900390625, -1.888885498046875" rotate="90.0" smooth="false" stroke="TRANSPARENT" strokeType="INSIDE" style="-fx-scale-x: 2.5; -fx-scale-y: 2.5;" />
+                  <Polygon fill="#dba237" layoutX="146.0" layoutY="576.0" onMouseClicked="#previous" points="-16.555572509765625, 40.0, 50.0, 40.0, 13.15694522857666, 1.4645915031433105" rotate="-90.0" smooth="false" stroke="TRANSPARENT" strokeType="INSIDE" style="-fx-scale-x: 2.5; -fx-scale-y: 2.5;" />
+                  <MenuButton layoutX="106.0" layoutY="66.0" mnemonicParsing="false" prefHeight="125.0" prefWidth="336.0" text="Current Page">
+                     <items>
+                        <MenuItem mnemonicParsing="false" onAction="#showOne" text="One" />
+                        <MenuItem mnemonicParsing="false" onAction="#showTwo" text="Two" />
+                        <MenuItem mnemonicParsing="false" onAction="#showThree" text="Three" />
+                        <MenuItem mnemonicParsing="false" onAction="#showFour" text="Four" />
+                        <MenuItem mnemonicParsing="false" onAction="#showFive" text="Five" />
+                        <MenuItem mnemonicParsing="false" onAction="#showSix" text="Six" />
+                        <MenuItem mnemonicParsing="false" onAction="#showSeven" text="Seven " />
+                        <MenuItem mnemonicParsing="false" onAction="#showEight" text="Eight" />
+                     </items>
+                     <font>
+                        <Font size="35.0" />
+                     </font>
+                  </MenuButton>
+               </children></AnchorPane>
+        </content>
+      </Tab>
+      <Tab text="Discard Pile">
+         <content>
+            <AnchorPane fx:id="discardPane" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <ImageView fitHeight="1053.0" fitWidth="1914.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@assets/background.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="discard1" fitHeight="464.0" fitWidth="264.0" layoutX="49.0" layoutY="142.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@assets/Area%20Cards/0.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="discard2" fitHeight="464.0" fitWidth="264.0" layoutX="363.0" layoutY="142.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@assets/Area%20Cards/1.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="discard3" fitHeight="464.0" fitWidth="264.0" layoutX="677.0" layoutY="142.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@assets/Area%20Cards/2.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="discard4" fitHeight="464.0" fitWidth="264.0" layoutX="989.0" layoutY="142.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@assets/Area%20Cards/3.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="discard5" fitHeight="464.0" fitWidth="264.0" layoutX="1283.0" layoutY="142.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@assets/Area%20Cards/4.png" />
+                     </image>
+                  </ImageView>
+                  <Text fx:id="discardtext1" layoutX="163.0" layoutY="607.0" strokeType="OUTSIDE" strokeWidth="0.0" text="5">
+                     <font>
+                        <Font name="Gill Sans MT Bold" size="55.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="discardtext2" layoutX="478.0" layoutY="607.0" strokeType="OUTSIDE" strokeWidth="0.0" text="5">
+                     <font>
+                        <Font name="Gill Sans MT Bold" size="55.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="discardtext3" layoutX="795.0" layoutY="607.0" strokeType="OUTSIDE" strokeWidth="0.0" text="5">
+                     <font>
+                        <Font name="Gill Sans MT Bold" size="55.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="discardtext4" layoutX="1106.0" layoutY="607.0" strokeType="OUTSIDE" strokeWidth="0.0" text="5">
+                     <font>
+                        <Font name="Gill Sans MT Bold" size="55.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="discardtext5" layoutX="1400.0" layoutY="607.0" strokeType="OUTSIDE" strokeWidth="0.0" text="5">
+                     <font>
+                        <Font name="Gill Sans MT Bold" size="55.0" />
+                     </font>
+                  </Text>
+               </children>
+            </AnchorPane>
+         </content>
+      </Tab>
+   </tabs>
+</TabPane>

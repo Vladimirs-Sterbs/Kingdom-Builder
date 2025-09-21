@@ -1,0 +1,7 @@
+.slider .track {
+    -fx-pref-height:20;
+}
+
+.slider:vertical .track {
+    -fx-pref-width:20;
+}
